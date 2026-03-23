@@ -21,7 +21,7 @@ body {
 /* --- 2. HEADER BEREICH --- */
 .header-section {
     margin-bottom: 60px;
-    border-left: 5px solid #101DE8;
+    border-left: 5px solid #8b0000;
     padding-left: 20px;
 }
 
@@ -37,7 +37,7 @@ body {
 }
 
 .highlight {
-    color: #101DE8;
+    color: #8b0000;
 }
 
 .author {
@@ -55,10 +55,23 @@ body {
     transition: transform 0.4s;
 }
 
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
 .praktikum-card:hover {
     transform: translateY(-5px); /* Kleiner Hover-Effekt */
 }
 
+
+
+.card-link:focus-visible {
+    outline: 3px solid #8b0000;
+    outline-offset: 6px;
+    border-radius: 12px;
+}
 
 .logo-bar {
     margin-bottom: 20px;
@@ -67,7 +80,7 @@ body {
 }
 
 .logo-bar h2 {
-    color: #101DE8;
+    color: #8b0000;
     font-size: 1.5rem;
     margin: 0;
 }
@@ -80,7 +93,7 @@ body {
 /* --- 4. FLEX-LAYOUT (Text links, Bild rechts) --- */
 .content-flex {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
 }
 
@@ -89,13 +102,12 @@ body {
 }
 
 .text-column h2 {
-    color: #101DE8;
+    color: #8b0000;
     font-size: 1.5rem;
 }
 
 .image-column {
     flex: 1; /* Bild-Container */
-    
 }
 
 
@@ -106,11 +118,10 @@ body {
     border-radius: 8px;
     display: block;
     margin: 20px auto;
-    min-height: 100px;
 }
 
-    /* --- 5. MOBILE ANPASSUNG --- */
-    @media (max-width: 600px) {
+/* --- 5. MOBILE ANPASSUNG --- */
+@media (max-width: 600px) {
     .content-flex {
         flex-direction: column; /* Auf Handys untereinander stapeln */
     }
@@ -132,17 +143,12 @@ body {
     background: #f9f9f9;
     border-radius: 8px;
     border: 1px solid #eee;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.product-item:hover,
-.product-item:focus-within {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 18px rgba(36, 30, 333, 0.719);
 }
 
 
-
+.product-item a {
+    text-decoration: none;
+}
 
 .product-item img {
     width: 100%;
@@ -153,7 +159,7 @@ body {
 
 .product-item h3 {
     font-size: 1.1rem;
-    color: #101DE8;
+    color: #8b0000;
 }
 
 .product-item p {
@@ -191,7 +197,7 @@ ul {
 .back-link {
     display: inline-block;
     margin-top: 20px;
-    color: #101DE8;
+    color: #8b0000;
     text-decoration: none;
     font-weight: bold;
 }
@@ -204,10 +210,10 @@ ul {
     position: fixed;
     right: 24px;
     bottom: 24px;
-    width: 54px;
-    height: 54px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    background: #101DE8;
+    background: #8b0000;
     color: #fff;
     text-decoration: none;
     display: flex;
@@ -222,7 +228,7 @@ ul {
 
 
 .floating-home:hover {
-    background: #101DE8;
+    background: #a40000;
     transform: translateY(-3px) scale(1.04);
 }
 
@@ -232,7 +238,7 @@ ul {
 }
 
 .floating-home-symbol {
-    margin-top: -13px;
+    margin-top: -12px;
     font-size: 40px !important;
     line-height: 1;
     width: 100%;
@@ -240,25 +246,4 @@ ul {
     display: block;
 }
 
-
-.unstyled-link {
-    text-decoration: inherit;
-    color: inherit;
-}
-
-#hover-alert-button {
-    text-align: center;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    border: 1px solid #eee;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    font-size: 0.9rem;
-    color: #101DE8;
-}
-
-#hover-alert-button:hover,
-#hover-alert-button:focus-within {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 18px rgba(36, 30, 333, 0.719);
-}
+/* --- Daimler --- */

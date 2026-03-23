@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Playground</title>
+    <link rel="stylesheet" href="/tabs/games/games.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <header class="head-section">
+            <h1>Playground</h1>
+            <p>Hier kannst du mehrere Spiele untereinander einbauen.</p>
+        </header>
+
+        <section class="game-area" id="game-1">
+            <h2>Rock Paper Scissors Arena</h2>
+            <div class="game-slot" id="">
+                <div class="ssp-rules">
+                    <p>Schere schlägt Papier</p>
+                    <p>Stein schlägt Schere</p>
+                    <p>Papier schlägt Stein</p>
+                </div>
+
+                <div class="ssp-buttons">
+                    <button class="ssp-button" onclick="spiele('Schere')">✂️</button>
+                    <button class="ssp-button" onclick="spiele('Stein')"><img src="/tabs/games/images/stone-icon.png" alt=""></button>
+                    <button class="ssp-button" onclick="spiele('Papier')">📄</button>
+                </div>
+
+                <p id="result" class="ssp-result"></p>
+            </div>
+        </section>
+
+        <section class="game-area" id="game-2">
+            <h2>Game Area 2</h2>
+            <div class="game-slot">Hier dein zweites Spiel einfuegen.</div>
+        </section>
+
+        <section class="game-area" id="game-3">
+            <h2>Game Area 3</h2>
+            <div class="game-slot">Hier dein drittes Spiel einfuegen.</div>
+        </section>
+
+        <section class="game-area" id="game-4">
+            <h2>Game Area 4</h2>
+            <div class="game-slot">Hier dein viertes Spiel einfuegen.</div>
+        </section>
+    </main>
+
+<a href="/tabs/index.html" class="floating-home" aria-label="Zur Startseite">
+    <span class="floating-home-symbol">&#8962;</span>
+</a>
+
+<a href="/tabs/bertin.html" class="floating-back" aria-label="Eine Seite zurück">
+    <p>←</p>
+</a>
+
+<script src="/tabs/script.js"></script>
+</body>
+</html>
