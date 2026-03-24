@@ -11,6 +11,28 @@ body {
     padding: 32px 16px;
 }
 
+#coin-display {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(16, 29, 232, 0.88);
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+}
+
+#coin-count {
+    min-width: 44px;
+    text-align: right;
+}
+
 .page-wrap {
     max-width: 960px;
     margin: 0 auto;
@@ -75,6 +97,10 @@ body {
 
 #game-1 h2 {
     color: #596275;
+    background: linear-gradient(135deg, #8f9196, #565a61);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .ssp-rules {
@@ -135,6 +161,175 @@ body {
     font-weight: 700;
     color: #eef2ff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#game-2 .game-slot {
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            rgba(255, 0, 0, 0.8) 0 10px,
+            rgba(255, 136, 0, 0.8) 10px 20px,
+            rgba(255, 230, 0, 0.8) 20px 30px,
+            rgba(0, 190, 0, 0.8) 30px 40px,
+            rgba(0, 170, 255, 0.8) 40px 50px,
+            rgba(60, 0, 200, 0.8) 50px 60px,
+            rgba(150, 0, 170, 0.8) 60px 70px
+        ),
+        linear-gradient(135deg, #ff2e2e 0%, #ff9f1c 18%, #ffe347 34%, #34d058 50%, #22a6f2 67%, #4c55ff 82%, #b620e0 100%);
+}
+
+#game-2 .guess-rules {
+    width: min(560px, 96%);
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    background: rgba(18, 18, 18, 0.23);
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.45;
+    font-size: 0.95rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+    font-weight: bold;
+}
+
+#game-2 .guess-rules p:first-child {
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+#game-2 .game-slot::before,
+#game-2 .game-slot::after {
+    position: absolute;
+    content: "?";
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#game-2 .game-slot::before {
+    top: 10%;
+    left: 8%;
+    transform: rotate(-8deg);
+    text-shadow:
+        120px 0 0 rgba(255, 255, 255, 0.9),
+        240px 0 0 rgba(255, 255, 255, 0.9),
+        360px 0 0 rgba(255, 255, 255, 0.9),
+        60px 70px 0 rgba(255, 255, 255, 0.9),
+        180px 70px 0 rgba(255, 255, 255, 0.9),
+        300px 70px 0 rgba(255, 255, 255, 0.9),
+        0 140px 0 rgba(255, 255, 255, 0.9),
+        120px 140px 0 rgba(255, 255, 255, 0.9),
+        240px 140px 0 rgba(255, 255, 255, 0.9),
+        360px 140px 0 rgba(255, 255, 255, 0.9);
+}
+
+#game-2 .game-slot::after {
+    top: 22%;
+    left: 14%;
+    transform: rotate(-8deg);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow:
+        120px 0 0 rgba(255, 255, 255, 0.9),
+        240px 0 0 rgba(255, 255, 255, 0.9),
+        360px 0 0 rgba(255, 255, 255, 0.9),
+        60px 70px 0 rgba(255, 255, 255, 0.9),
+        180px 70px 0 rgba(255, 255, 255, 0.9),
+        300px 70px 0 rgba(255, 255, 255, 0.9),
+        0 140px 0 rgba(255, 255, 255, 0.9),
+        120px 140px 0 rgba(255, 255, 255, 0.9),
+        240px 140px 0 rgba(255, 255, 255, 0.9),
+        360px 140px 0 rgba(255, 255, 255, 0.9);
+}
+
+#game-2 .game-slot > * {
+    position: relative;
+    z-index: 1;
+}
+
+#game-2 h2 {
+    background: linear-gradient(135deg, #ff2e2e 0%, #ff9f1c 15%, #ffe347 30%, #34d058 45%, #22a6f2 60%, #4c55ff 75%, #b620e0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-shadow: none;
+}
+
+#game-2 #userGuess {
+    width: min(420px, 92%);
+    margin-top: 4px;
+    padding: 11px 14px;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #24233c;
+    font-size: 1rem;
+}
+
+#game-2 #userGuess:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.95);
+    outline-offset: 2px;
+}
+
+#game-2 button {
+    margin-top: 2px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 700;
+    background: rgba(20, 20, 20, 0.32);
+}
+
+#game-2 #rate {
+    margin: 0;
+}
+
+#game-2 #feedback {
+    margin-top: 10px;
+    min-height: 26px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+#game-2 .game-slot.winner {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 0, 0.4), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.3), transparent 40%),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 0, 0.25), transparent 45%),
+        radial-gradient(circle at 70% 20%, rgba(255, 165, 0, 0.3), transparent 40%),
+        linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FF6B6B 50%, #4ECDC4 75%, #FFD700 100%);
+    animation: celebrateWin 0.6s ease-out;
+}
+
+@keyframes celebrateWin {
+    0% {
+        transform: scale(0.98);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    }
 }
 
 

@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="/tabs/games/games.css">
 </head>
 <body>
+    <div id="coin-display" aria-live="polite">
+        <span>Coins:</span>
+        <strong id="coin-count">500</strong>
+    </div>
+
     <main class="page-wrap">
         <header class="head-section">
             <h1>Playground</h1>
@@ -15,7 +20,7 @@
 
         <section class="game-area" id="game-1">
             <h2>Rock Paper Scissors Arena</h2>
-            <div class="game-slot" id="">
+            <div class="game-slot" >
                 <div class="ssp-rules">
                     <p>Schere schlägt Papier</p>
                     <p>Stein schlägt Schere</p>
@@ -33,8 +38,21 @@
         </section>
 
         <section class="game-area" id="game-2">
-            <h2>Game Area 2</h2>
-            <div class="game-slot">Hier dein zweites Spiel einfuegen.</div>
+            <h2>Zahlen Raten</h2>
+            <div class="game-slot">
+                <div class="guess-rules">
+                    <p>Regeln:</p>
+                    <p>1. Gib eine ganze Zahl von 1 bis 100 ein.</p>
+                    <p>2. Nach jedem Versuch bekommst du einen Hinweis: zu hoch oder zu niedrig.</p>
+                    <p>3. Je weniger Versuche, desto mehr Münzen bleiben dir.</p>
+                </div>
+                <input type="text" id="userGuess" placeholder="Zahl zwischen 1 und 100 eingeben">
+                <button onclick="guessNumber()"><p id="rate">Rate</p></button>
+                <button onclick="restartGuessGame()"><p>Restart</p></button>
+                <div>
+                    <p id="feedback"></p>
+                </div>
+            </div>
         </section>
 
         <section class="game-area" id="game-3">
@@ -52,7 +70,7 @@
     <span class="floating-home-symbol">&#8962;</span>
 </a>
 
-<a href="/tabs/bertin.html" class="floating-back" aria-label="Eine Seite zurück">
+<a href="/tabs/bertin.html#back" class="floating-back" aria-label="Eine Seite zurück">
     <p>←</p>
 </a>
 
