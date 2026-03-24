@@ -13,24 +13,41 @@ body {
 
 #coin-display {
     position: fixed;
-    top: 16px;
+    top: 32px;
     right: 16px;
     z-index: 1100;
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 12px;
+    padding: 9px 14px;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    background: rgba(16, 29, 232, 0.88);
-    color: #ffffff;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    border: 1px solid #b7881f;
+    background: linear-gradient(145deg, #fff3b0 0%, #ffd35c 45%, #d89d14 100%);
+    color: #4a2e00;
+    box-shadow: 0 8px 18px rgba(96, 61, 0, 0.25);
     font-weight: 700;
+}
+
+.coin-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coin-icon img {
+    width: 2rem;
+    height: auto;
+    display: block;
+}
+
+.coin-label {
+    letter-spacing: 0.3px;
 }
 
 #coin-count {
     min-width: 44px;
     text-align: right;
+    color: #3a2100;
 }
 
 .page-wrap {

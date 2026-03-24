@@ -8,8 +8,9 @@
 </head>
 <body>
     <div id="coin-display" aria-live="polite">
-        <span>Coins:</span>
-        <strong id="coin-count">500</strong>
+        <span class="coin-icon" aria-hidden="true"><img src="/tabs/games/images/coin.png" alt=""></span>
+        <span class="coin-label">Coins:</span>
+        <strong id="coin-count"></strong>
     </div>
 
     <main class="page-wrap">
@@ -47,8 +48,8 @@
                     <p>3. Je weniger Versuche, desto mehr Münzen bleiben dir.</p>
                 </div>
                 <input type="text" id="userGuess" placeholder="Zahl zwischen 1 und 100 eingeben">
-                <button onclick="guessNumber()"><p id="rate">Rate</p></button>
-                <button onclick="restartGuessGame()"><p>Restart</p></button>
+                <button id="guess-button" onclick="guessNumber()"><p id="rate">Rate</p></button>
+                <button id="restart-button" onclick="restartGuessGame()"><p>Restart</p></button>
                 <div>
                     <p id="feedback"></p>
                 </div>
