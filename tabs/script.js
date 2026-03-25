@@ -1,4 +1,5 @@
-const storedCoins = Number(localStorage.getItem("coins"));
+const storedCoinsRaw = sessionStorage.getItem("coins");
+const storedCoins = storedCoinsRaw === null ? NaN : Number(storedCoinsRaw);
 let coins = Number.isFinite(storedCoins) ? storedCoins : 500;
 updateCoinDisplay(coins);
 
@@ -8,13 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (hoverAlertButton) {
         hoverAlertButton.addEventListener("click", function () {
-            window.location.href = "/tabs/games/games.html#game-1";
+            window.location.href = "games/games.html#game-1";
         });
     }
 
     if (guessAlertButton) {
         guessAlertButton.addEventListener("click", function () {
-            window.location.href = "/tabs/games/games.html#game-2";
+            window.location.href = "games/games.html#game-2";
         });
     }
 });
@@ -33,11 +34,11 @@ function updateCoinDisplay(value) {
 
     if (typeof value === "number") {
         if (value < 0) {
-            window.location.href = "/tabs/index.html";
+            window.location.href = "index.html";
             return;
         }
 
-        localStorage.setItem("coins", String(value));
+        sessionStorage.setItem("coins", String(value));
         coinCount.innerText = value;
         return;
     }
