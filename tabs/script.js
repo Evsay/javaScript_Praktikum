@@ -1,6 +1,6 @@
-let coins = 500;
+const storedCoins = Number(localStorage.getItem("coins"));
+let coins = Number.isFinite(storedCoins) ? storedCoins : 500;
 updateCoinDisplay(coins);
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const hoverAlertButton = document.getElementById("hover-alert-button");
@@ -37,6 +37,7 @@ function updateCoinDisplay(value) {
             return;
         }
 
+        localStorage.setItem("coins", String(value));
         coinCount.innerText = value;
         return;
     }
@@ -102,7 +103,7 @@ if (restartGuessButton) {
     restartGuessButton.disabled = true;
 }
 
-updateCoinDisplay();
+updateCoinDisplay(coins);
 
 if (userGuessInputField) {
     userGuessInputField.addEventListener("keydown", function (event) {
@@ -206,6 +207,7 @@ function guessNumber() {
 
         }
     }
+
 
 updateCoinDisplay(coins);
     userGuessInput.focus();
